@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 357902944}
   - component: {fileID: 357902945}
   - component: {fileID: 357902946}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: triggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461902647}
   - component: {fileID: 461902648}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: hitBox
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -2578,7 +2578,7 @@ GameObject:
   - component: {fileID: 1071289291}
   - component: {fileID: 1071289293}
   - component: {fileID: 1071289292}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: hotZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,7 +3364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490851781}
   - component: {fileID: 1490851782}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: enemy_sprites
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3451,6 +3451,7 @@ GameObject:
   - component: {fileID: 1532172421}
   - component: {fileID: 1532172420}
   - component: {fileID: 1532172424}
+  - component: {fileID: 1532172425}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -3558,6 +3559,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   components: []
+--- !u!61 &1532172425
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532172419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.10101652, y: 0.012122095}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6040144, y: 1.4767994}
+  m_EdgeRadius: 0
 --- !u!1 &1586613170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,7 +3920,7 @@ GameObject:
   - component: {fileID: 1773316810}
   - component: {fileID: 1773316812}
   - component: {fileID: 1773316811}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: enemy_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
