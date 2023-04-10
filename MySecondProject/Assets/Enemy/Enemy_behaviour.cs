@@ -15,6 +15,9 @@ public class Enemy_behaviour : MonoBehaviour
     [HideInInspector] public bool inRange; //Check if Player is in range
     public GameObject hotZone;
     public GameObject triggerArea;
+    public Health playerHealth;
+    public float damage;
+    public Health enemyHealth;
     #endregion
 
     #region Private Variables
@@ -34,7 +37,12 @@ public class Enemy_behaviour : MonoBehaviour
 
     void Update()
     {
-        if(!attackMode)
+        if (enemyHealth.currentHealth <= 0)
+        {
+            Destroy(gameObject, 1);
+        }
+
+        if (!attackMode)
         {
             Move();
         }
@@ -148,5 +156,9 @@ public class Enemy_behaviour : MonoBehaviour
 
         transform.eulerAngles = rotation;
     }
-
+    
+    public void OnAttack()
+    {
+        playerHealth.TakeDamage(damage);
+    }
 }

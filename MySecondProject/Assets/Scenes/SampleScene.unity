@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 357902944}
   - component: {fileID: 357902945}
   - component: {fileID: 357902946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: triggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -963,7 +963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368409778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.027506197, y: 0, z: 0}
+  m_LocalPosition: {x: 0.027503623, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1075,7 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461902647}
   - component: {fileID: 461902648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hitBox
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1610,7 +1610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7347836, y: 0.70388937, z: -10}
+  m_LocalPosition: {x: -1.7348351, y: 0.70388937, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2292,7 +2292,7 @@ PrefabInstance:
       objectReference: {fileID: 1712879741}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_speed
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: attackPos
@@ -2578,7 +2578,7 @@ GameObject:
   - component: {fileID: 1071289291}
   - component: {fileID: 1071289293}
   - component: {fileID: 1071289292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hotZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2945,7 +2945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199523863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1213784, y: 0, z: 0}
+  m_LocalPosition: {x: -6.121376, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3332,7 +3332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486079644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38458538, y: 0, z: 0}
+  m_LocalPosition: {x: -0.38458022, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3364,9 +3364,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1490851781}
   - component: {fileID: 1490851782}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy_sprites
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3450,9 +3450,10 @@ GameObject:
   - component: {fileID: 1532172422}
   - component: {fileID: 1532172421}
   - component: {fileID: 1532172420}
-  m_Layer: 0
+  - component: {fileID: 1532172424}
+  m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3478,6 +3479,9 @@ MonoBehaviour:
   inRange: 0
   hotZone: {fileID: 1071289290}
   triggerArea: {fileID: 357902943}
+  playerHealth: {fileID: 1052961954}
+  damage: 2
+  enemyHealth: {fileID: 1532172424}
 --- !u!95 &1532172421
 Animator:
   serializedVersion: 5
@@ -3540,6 +3544,20 @@ Transform:
   m_Father: {fileID: 1847580583}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1532172424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532172419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63eb5ffb6c13cf84495ecb21265efbe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  components: []
 --- !u!1 &1586613170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,7 +3583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586613170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.040823776, y: 0, z: 0}
+  m_LocalPosition: {x: 0.04082635, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3875,7 +3893,7 @@ GameObject:
   - component: {fileID: 1773316810}
   - component: {fileID: 1773316812}
   - component: {fileID: 1773316811}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4583,7 +4601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992482138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03371157, y: 0, z: 0}
+  m_LocalPosition: {x: -0.033710543, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4798,7 +4816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037270254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007287375, y: 0, z: 0}
+  m_LocalPosition: {x: 0.007292525, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
