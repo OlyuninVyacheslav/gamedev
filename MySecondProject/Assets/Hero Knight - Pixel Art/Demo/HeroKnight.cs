@@ -9,6 +9,17 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] bool       m_noBlood = false;
     [SerializeField] GameObject m_slideDust;
 
+    //audio jump
+    [SerializeField] private AudioSource Jump;
+
+    //run audio
+    [SerializeField] private AudioSource Run;
+
+    //hit sword
+    [SerializeField] private AudioSource HitSword;
+
+    //block shield
+    [SerializeField] private AudioSource BlockShield;
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_HeroKnight   m_groundSensor;
@@ -136,7 +147,7 @@ public class HeroKnight : MonoBehaviour {
 
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
             m_animator.SetTrigger("Attack" + m_currentAttack);
-
+            HitSword.Play();
             timeBtwAttack = startTimeBtwAttack;
 
             // Reset timer
@@ -149,6 +160,7 @@ public class HeroKnight : MonoBehaviour {
             isBlocking = true;
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
+            BlockShield.Play();
         }
 
         else if (Input.GetMouseButtonUp(1) && isGrounded)
@@ -171,6 +183,7 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
+            Jump.Play();
             m_animator.SetBool("Grounded", m_grounded);
             m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
             m_groundSensor.Disable(0.2f);
@@ -182,6 +195,7 @@ public class HeroKnight : MonoBehaviour {
             // Reset timer
             m_delayToIdle = 0.05f;
             m_animator.SetInteger("AnimState", 1);
+            Run.Play();
         }
 
         //Idle
