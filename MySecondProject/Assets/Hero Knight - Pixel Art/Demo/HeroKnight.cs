@@ -5,7 +5,7 @@ public class HeroKnight : MonoBehaviour {
 
     public float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
-    [SerializeField] float      m_rollForce = 6.0f;
+    [SerializeField] float      m_rollForce = 60.0f;
     [SerializeField] bool       m_noBlood = false;
     [SerializeField] GameObject m_slideDust;
 
@@ -50,12 +50,16 @@ public class HeroKnight : MonoBehaviour {
     public Transform feetPos;
     public float checkRadius;
     public LayerMask WhatIsGround;
+    private float boostSpeed;
+    private float tempSpeed;
 
     public bool isBlocking = false;
 
     // Use this for initialization
     void Start ()
     {
+        tempSpeed = m_speed;
+        boostSpeed = m_speed * 1.5f;
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
@@ -198,15 +202,16 @@ public class HeroKnight : MonoBehaviour {
                 m_animator.SetInteger("AnimState", 1);
                 Run.Play();
             }
+            //Idle
+            else
+            {
+                // Prevents flickering transitions to idle
+                m_delayToIdle -= Time.deltaTime;
+                if (m_delayToIdle < 0)
+                    m_animator.SetInteger("AnimState", 0);
+            }
         }
-        //Idle
-        else
-        {
-            // Prevents flickering transitions to idle
-            m_delayToIdle -= Time.deltaTime;
-            if (m_delayToIdle < 0)
-                m_animator.SetInteger("AnimState", 0);
-        }
+        
     }
 
     private void OnAttack()
