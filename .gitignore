@@ -1,3 +1,4 @@
 MySecondProject/Library/*
 MySecondProject/Logs/*
 MySecondProject/Temp/*
+*.log
