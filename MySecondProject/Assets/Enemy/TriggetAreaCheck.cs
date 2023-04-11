@@ -15,7 +15,7 @@ public class TriggetAreaCheck : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+    
             enemyParent.target = collider.transform;
             enemyParent.inRange = true;
             enemyParent.hotZone.SetActive(true);

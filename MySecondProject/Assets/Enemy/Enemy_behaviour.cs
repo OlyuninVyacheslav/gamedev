@@ -17,10 +17,10 @@ public class Enemy_behaviour : MonoBehaviour
     public GameObject triggerArea;
     public Health playerHealth;
     public float damage;
-    public Health enemyHealth;
     #endregion
 
     #region Private Variables
+    private Health enemyHealth;
     private Animator anim;
     private float distance; // store the dist b/w enemy and player
     private bool attackMode;
@@ -33,12 +33,14 @@ public class Enemy_behaviour : MonoBehaviour
         SelectTarget();
         intTimer = timer; //store the intitial value of timer
         anim = GetComponent<Animator>();
+        enemyHealth = GetComponent<Health>();
     }
 
     void Update()
     {
         if (enemyHealth.currentHealth <= 0)
         {
+            moveSpeed = 0;
             Destroy(gameObject, 1);
         }
 

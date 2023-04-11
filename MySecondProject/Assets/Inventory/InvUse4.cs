@@ -9,6 +9,7 @@ public class InvUse4 : MonoBehaviour
     public Item hil;
     public GameObject mes;
     public float whenst;
+    private Animator anim;
     void Start()
     {
         whenst = Time.time;
