@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
     [SerializeField] private Behaviour[] components;
-    public float currentHealth { get; private set; }
+    public float currentHealth { get;  set; }
 
     private void Awake()
     {
