@@ -60,6 +60,7 @@
     <Compile Include="Assets\Inventory\Actions\Heal.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Inventory\MiddleW.cs" />
+    <Compile Include="Assets\Menu textures and scripts\MainMenu.cs" />
     <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
     <Compile Include="Assets\Inventory\BufSys.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
