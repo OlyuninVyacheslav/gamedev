@@ -12,8 +12,6 @@ public class HeroKnight : MonoBehaviour {
     //audio jump
     [SerializeField] private AudioSource Jump;
 
-    //run audio
-    [SerializeField] private AudioSource Run;
 
     //hit sword
     [SerializeField] private AudioSource HitSword;
@@ -200,7 +198,6 @@ public class HeroKnight : MonoBehaviour {
                 // Reset timer
                 m_delayToIdle = 0.05f;
                 m_animator.SetInteger("AnimState", 1);
-                Run.Play();
             }
             //Idle
             else
