@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BufSys : MonoBehaviour
 {
@@ -17,7 +18,13 @@ public class BufSys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //щрн дкъ реярнб мнбекэмшу дхюкнцнб бшпефхре щрн онрнл й вепръл
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            SceneManager.LoadScene("Novel_dialog");
+        }
+
+     
     }
     public void act(buff wh, float value,float duration)
     {
