@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     }
     void loadsc()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Forest");
     }
     public void ShowSettings()
     {
